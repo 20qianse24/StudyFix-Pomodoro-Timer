@@ -1,0 +1,22 @@
+.DS_Store
+node_modules/
+.env
+*.log
+.gemini/
+
+# System and Cache folders
+.cache/
+.codeoss/
+.config/
+.docker/
+.npm/
+.vscode/
+
+# Shell/Environment files
+.bash_history
+.bash_logout
+.bashrc
+.gitconfig
+.profile
+.sudo_as_admin_successful
+README-cloudshell.txt

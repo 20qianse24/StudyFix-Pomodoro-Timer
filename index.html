@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="timer-section">
+            <div id="mode-tabs">
+                <button class="mode-btn active" data-mode="study">Study</button>
+                <button class="mode-btn" data-mode="short">Short Break</button>
+                <button class="mode-btn" data-mode="long">Long Break</button>
+            </div>
+
+            <div id="timer-display">25:00</div>
+            
+            <div id="controls">
+                <button id="start-btn">Start</button>
+                <button id="pause-btn">Pause</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+
+            <div id="action-bar">
+                <button id="settings-btn">Settings</button>
+                <button id="add-task-btn">Add Task</button>
+                <button id="session-btn">Your study session</button>
+            </div>
+        </section>
+
+        <section id="tasks-section">
+            <h2>Current Task</h2>
+            <div id="current-task-display">No task selected</div>
+            
+            <h2>Your Tasks</h2>
+            <ul id="task-list">
+                <!-- Tasks will be injected here -->
+            </ul>
+        </section>
+
+        <!-- Modals -->
+        <div id="settings-modal" class="modal-backdrop hidden">
+            <div class="modal-content">
+                <h3>Settings</h3>
+                <div class="setting-group">
+                    <label>Study Duration (min):</label>
+                    <input type="number" id="study-duration" min="1" value="25">
+                </div>
+                <div class="setting-group">
+                    <label>Short Break (min):</label>
+                    <input type="number" id="short-break" min="1" value="5">
+                </div>
+                <div class="setting-group">
+                    <label>Long Break (min):</label>
+                    <input type="number" id="long-break" min="1" value="15">
+                </div>
+                <div class="setting-group">
+                    <label>Appearance:</label>
+                    <select id="theme-select">
+                        <option value="light">Sunlit Study (Light)</option>
+                        <option value="dark">City Night Focus (Dark)</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button id="save-settings">Save</button>
+                    <button id="close-settings" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="task-modal" class="modal-backdrop hidden">
+            <div class="modal-content">
+                <h3>Add New Task</h3>
+                <textarea id="task-input" placeholder="What are you working on?"></textarea>
+                <div class="modal-actions">
+                    <button id="save-task">Save Task</button>
+                    <button id="close-task" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="session-modal" class="modal-backdrop hidden">
+            <div class="modal-content">
+                <h3>Your Study Session</h3>
+                <div class="setting-group">
+                    <label>Tasks Completed!</label>
+                    <div id="session-tasks-done" style="font-size: 3rem; font-weight: bold; font-family: 'Playfair Display', serif; color: var(--accent);">0</div>
+                </div>
+                <div class="setting-group">
+                    <label>Pomodoros Completed!</label>
+                    <div id="session-pomodoros-done" style="font-size: 3rem; font-weight: bold; font-family: 'Playfair Display', serif; color: var(--accent);">0</div>
+                </div>
+                <div class="modal-actions">
+                    <button id="close-session" class="cancel-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <audio id="notification-sound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
