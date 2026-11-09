@@ -1,4 +1,4 @@
-# StudyFix Pomodoro - Now LIVE!
+# StudyFix Pomodoro Web Link
 https://20qianse24.github.io/StudyFix-Pomodoro-Timer/ 
 
 ## Features:
